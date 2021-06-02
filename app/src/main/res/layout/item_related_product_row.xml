@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+    <data>
+        <import type="com.test.ecommerce.utility.BindingUtils" />
+
+        <variable
+            name="aProduct"
+            type="com.test.ecommerce.model.AssociatedProduct" />
+    </data>
+<androidx.constraintlayout.widget.ConstraintLayout
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content">
+
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="@dimen/_100sdp"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/_5sdp"
+        app:cardCornerRadius="@dimen/_5sdp"
+        app:cardElevation="@dimen/_2sdp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:id="@+id/imageView"
+                imageUrl="@{aProduct.image}"
+                android:scaleType="centerCrop"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_150sdp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/textView3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="@{aProduct.name}"
+                android:textColor="@color/black"
+                android:textStyle="bold"
+                android:textSize="@dimen/_8ssp"
+                android:singleLine="true"
+                android:ellipsize="end"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/imageView" />
+
+
+            <LinearLayout
+                android:id="@+id/linearLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:orientation="horizontal"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView3">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="@dimen/_2sdp"
+                    android:text="@{aProduct.currency_code}"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_7ssp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="@dimen/_2sdp"
+                    android:text="@{aProduct.final_price}"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_7ssp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="@dimen/_2sdp"
+                    strikeThrough="@{true}"
+                    android:text="@{aProduct.regular_price}"
+                    android:textSize="@dimen/_7ssp"
+                    />
+
+
+            </LinearLayout>
+
+            <ImageView
+                android:id="@+id/imageView2"
+                android:layout_width="@dimen/_20sdp"
+                android:layout_height="@dimen/_20sdp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginRight="8dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/ic_heart" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    </androidx.cardview.widget.CardView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

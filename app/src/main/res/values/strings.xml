@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">Ecommerce</string>
+    <string name="wishlist">WISHLIST</string>
+    <string name="share">SHARE</string>
+    <string name="desc">Description</string>
+    <string name="coc">Composition and Care</string>
+    <string name="add_bag">Add to Bag</string>
+</resources>
